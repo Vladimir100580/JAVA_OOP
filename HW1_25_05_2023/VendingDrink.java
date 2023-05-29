@@ -41,4 +41,34 @@ public class VendingDrink {
         }
         return null;
     }
+
+    HotDrink getHotDrink1(String kind, double price, int temperature) {
+        for (HotDrink drink : list) {
+            if (temperature == drink.getTemperature()
+                    && kind.equals(drink.getKind())
+                    && price == drink.getPrice()) {
+                return drink;
+            }
+        }
+        return null;
+    }
+
+    HotDrink getHotDrink1(String kind, double price) {
+        for (HotDrink drink : list) {
+            if (kind.equals(drink.getKind())
+                    && price == drink.getPrice()) {
+                return drink;
+            }
+        }
+        return null;
+    }
+
+    HotDrink getHotDrink1(String kind) {
+        for (HotDrink drink : list) {
+            if (kind.equals(drink.getKind())) {
+                return drink;
+            }
+        }
+        return null;
+    }
 }

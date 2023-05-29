@@ -59,5 +59,11 @@ public class Main {
         System.out.println(vendDrink.getHotDrink(40));
         System.out.println(vendDrink.getHotDrink(80));
 
+        System.out.println();
+        System.out.println(vendDrink.getHotDrink1("Green Tea",10, 70));
+        System.out.println(vendDrink.getHotDrink1("Mulled Wine",10, 70));
+        System.out.println(vendDrink.getHotDrink1("Mulled Wine"));
+        System.out.println(vendDrink.getHotDrink1("Coffee", 15));
+        System.out.println(vendDrink.getHotDrink1("Coffee", 16));
     }
 }

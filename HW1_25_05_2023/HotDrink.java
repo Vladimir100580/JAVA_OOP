@@ -1,6 +1,6 @@
 package HW1_25_05_2023;
 
-public abstract class HotDrink extends Product {
+public class HotDrink extends Product {
 
     protected int temperature;
     public HotDrink(String kind, double price, Long id, int temperature) {
