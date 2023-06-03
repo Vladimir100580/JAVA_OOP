@@ -9,10 +9,6 @@ import java.util.Random;
 public class Program {
     public static void main(String[] args) {
 
-
-        // Герой - герой ли?
-        // #region teams
-
         int teamCount = 10;
         Random rand = new Random();
 

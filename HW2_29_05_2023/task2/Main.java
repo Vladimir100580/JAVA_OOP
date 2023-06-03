@@ -20,7 +20,7 @@ public class Main {
         mark.releaseFromMarket(human2);      //второй клиет вышел из магазина
         mark.update();
 
-        mark.takeInQueue(human3);           // Третий встал в очередь
+        mark.takeInQueue(human3);          // Третий встал в очередь
         mark.update();
 
         mark.giveOrders(human3);           // Третий сделал заказ

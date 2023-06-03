@@ -8,7 +8,14 @@ import java.util.List;
 
 public class Market implements MarketBehaviour, QueueBehaviour {
 
+
     public static List<Human> list;
+
+    private Human hhh;
+    public Market(Human hhh) {
+        this.hhh = hhh;
+    }
+
 
     public Market() {
         list = new ArrayList<>();
@@ -25,11 +32,15 @@ public class Market implements MarketBehaviour, QueueBehaviour {
         list.removeIf(actor::equals);
     }
 
+//    public String getName() {
+//        return name;
+//    }
+
     @Override
     public void update() {                  // Обновляем магазин (т.е. выводим его текущее состояние)
         StringBuilder tx= new StringBuilder();
         for (Human hum : list) {
-            tx.append(hum+"\n");
+            tx.append(hum).append("\n");
         }
         System.out.println("\nОбновленный список магазина:");
         System.out.println(tx);

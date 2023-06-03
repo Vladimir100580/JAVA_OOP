@@ -11,6 +11,7 @@ public class Human extends Actor {
         this.address = address;
     }
 
+
     public String orderStatus() {         // Три булевых поля, при использовании хоть какой-то смысловой связи, подразумевают небольшое дерево
         String txt="";
         if (inTheQueue) { txt += "В очереди, "; }
