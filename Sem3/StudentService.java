@@ -1,10 +1,11 @@
 package Sem3;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+public class StudentService extends StudentGroup {
 
-public class StudentService implements Comparable<Student> {
 
     private final StudentRepository studentRepository;
 
@@ -16,23 +17,35 @@ public class StudentService implements Comparable<Student> {
         studentRepository.addStudent(student);
     }
 
-    public void printAll() {
-        for (Student student : studentRepository.getStudentGroup()) {
-            System.out.printf("ID: %s, Имя, Фамилия: %s\n", student.getId(), student.getFullName());
-        }
-        System.out.println();
-    }
+//    public StudentService(List<Student> list) {
+//        this.list = list;
+//    }
 
-    public void sort1All() {           // Как обратиться к studentsList здесь с помощью того же Collections.sort
-        System.out.println();
-//            Collections.sort(studentRepository.getStudentGroup());
-//            System.out.printf("ID: %s, Имя, Фамилия: %s\n", student.getId(), student.getFullName());
+    //List<Student> list = StudentGroup.getStudentsList();
+
+    public void sort1All(List<Student> studentsList) {           // Как обратиться к studentsList здесь с помощью того же Collections.sort
+        System.out.println(studentsList);
+
+
+
         Iterator<Student> iterator = studentRepository.getStudentGroup().iterator();
-        System.out.println(iterator);
+        //Collections.sort(studentRepository.getStudentGroup());
+        System.out.println(studentRepository.getStudentGroup());
         while (iterator.hasNext()) {
             System.out.println(iterator.next().getFullName());
         }
         //Collections.sort(studentsList);
+    }
+
+
+
+    public void printAll() {
+        for (Student student : studentRepository.getStudentGroup()) {
+            System.out.printf("ID: %s, Имя, Фамилия: %s\n", student.getId(), student.getFullName());
+        }
+//        System.out.println(studentRepository);
+//        System.out.println(studentRepository.getStudentGroup());
+//        System.out.println(studentRepository.getStudentGroup().getStudentsList());
     }
 
     public void deleteStudent(String fullName) {
@@ -44,28 +57,8 @@ public class StudentService implements Comparable<Student> {
         }
     }
 
-
-
-    public void sortStudent(String fullName) {
-
-        System.out.println();
-    }
-
-    @Override
-    public int compareTo(Student o) {
-        return 0;
-    }
-
-
-    //    public int compareTo(Student o) {
-//        if (this.id > o.id)
-//            return 1;
-//        else if (this.id < o.id)
-//            return -1;
-//        else
-//            return 0;
-//    }
-
-
-
 }
+
+
+
+

@@ -1,4 +1,4 @@
-package Sem3;
+package HW3_01_06_2023;
 
 public class StudentController {
 
@@ -7,7 +7,6 @@ public class StudentController {
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
-
 
     public void printAll() {
         studentService.printAll();
@@ -18,13 +17,15 @@ public class StudentController {
         return true;
     }
 
-    public void addStudent(Student student) {
+    public void addStudent(Student student){
         studentService.addStudent(student);
     }
 
+    public void sortFirstName() {
+        studentService.sortFirstName();
+    }
 
-//    public void sort1All() {
-//        studentService.sort1All();
-//    }
-
+    public void sortLastName() {
+        studentService.sortLastName();
+    }
 }

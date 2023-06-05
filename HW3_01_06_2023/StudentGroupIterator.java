@@ -1,4 +1,4 @@
-package Sem3;
+package HW3_01_06_2023;
 
 import java.util.Iterator;
 import java.util.List;
@@ -9,6 +9,7 @@ public class StudentGroupIterator implements Iterator<Student> {
 
     private final List<Student> studentList;
     private int position;
+
     public StudentGroupIterator(List<Student> studentsList) {
         this.studentList = studentsList;
     }
@@ -28,7 +29,6 @@ public class StudentGroupIterator implements Iterator<Student> {
 
     @Override
     public void remove() {
-        //throw new UnsupportedOperationException("remove");
-        studentList.remove(position);
+        studentList.remove(position-1);
     }
 }

@@ -1,6 +1,5 @@
-package Sem3;
+package HW3_01_06_2023;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -15,13 +14,8 @@ public class StudentGroup implements Iterable<Student> {
 
     private final List<Student> studentsList;
 
-
     public StudentGroup() {
         studentsList = new ArrayList<>();
-    }
-
-    public List<Student> getStudentsList() {
-        return studentsList;
     }
 
     @Override
@@ -33,11 +27,4 @@ public class StudentGroup implements Iterable<Student> {
     public void addStudent(Student student) {
         studentsList.add(student);
     }
-
-
-
-
-//    public void sort1All() {
-//        return new StudentGroupIterator(studentsList);
-//    }
 }

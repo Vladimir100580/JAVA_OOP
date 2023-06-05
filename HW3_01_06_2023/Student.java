@@ -1,6 +1,6 @@
-package Sem3;
+package HW3_01_06_2023;
 
-import lombok.*;
+import lombok.Data;
 
 //@Getter
 //@AllArgsConstructor
@@ -13,17 +13,8 @@ public class Student implements Comparable<Student> {
     private final Long id;
     private final String fullName;
 
-
     @Override
     public int compareTo(Student o) {
-        if (this.id > o.id)
-            return 1;
-        else if (this.id < o.id)
-            return -1;
-        else
-            return 0;
+        return fullName.compareTo(o.fullName);
     }
-
-
-
 }

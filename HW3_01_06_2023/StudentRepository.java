@@ -1,11 +1,9 @@
-package Sem3;
+package HW3_01_06_2023;
+
 
 import lombok.Getter;
 
-import java.util.ArrayList;
-
 @Getter
-
 public class StudentRepository {
     private final StudentGroup studentGroup;
 
@@ -13,9 +11,7 @@ public class StudentRepository {
         this.studentGroup = studentGroup;
     }
 
-
     public void addStudent(Student student){
         studentGroup.addStudent(student);
     }
-
 }
