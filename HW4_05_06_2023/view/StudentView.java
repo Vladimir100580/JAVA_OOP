@@ -41,4 +41,14 @@ public class StudentView implements UserView<Student> {
     public void removeUser(String fullName) {
         controller.removeUser(fullName);
     }
+
+    @Override
+    public int getMaxFullName() {
+        return controller.getMaxFullName();
+    }
+
+    @Override
+    public void buttonClickID() {
+
+    }
 }

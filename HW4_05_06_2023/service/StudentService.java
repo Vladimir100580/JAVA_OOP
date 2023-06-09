@@ -8,6 +8,7 @@ import HW4_05_06_2023.repository.UserRepository;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
 
 public class StudentService implements UserService<Student> {
 
@@ -21,14 +22,9 @@ public class StudentService implements UserService<Student> {
     @Override
     public void create(String fullName, Integer age, String phoneNumber) {
         Long id = studentRepository.getMaxId() + 1;
-
-        // Делаем красоту вывода, добавляя пробелы к полному имени исходя из самого длинного имени
-//        int maxlengthFN = studentRepository.getMaxFullName();
-//        fullName + " ".repeat(Math.max(0, maxlengthFN - fullName.length()))
         Student student = new Student(id, fullName, age, phoneNumber);
         studentRepository.add(student);
     }
-
 
     @Override
     public List<Student> getAll() {
@@ -53,13 +49,6 @@ public class StudentService implements UserService<Student> {
     @Override
     public List<Student> getAllSortUsersByAge() {
         List<Student> students = studentRepository.getAll();
-/*        students.sort(new Comparator<Student>() {
-            @Override
-            public int compare(Student o1, Student o2) {
-                return o1.getAge().compareTo(o2.getAge());
-            }
-        });*/
-//        students.sort((o1, o2) -> o1.getAge().compareTo(o2.getAge()));
         students.sort(Comparator.comparing(User::getAge));
 
         return students;
@@ -69,4 +58,20 @@ public class StudentService implements UserService<Student> {
     public void removeUser(String fullName) {
         studentRepository.remove(fullName);
     }
+
+
+    public int getMaxFullName() {             // !! Для красоты вывода в консоли (в разработке))
+        List<Student> students = studentRepository.getAll();
+        int maxFN = 0;
+        for (Student student : students) {
+            if (student.getFullName().length() > maxFN) {
+                maxFN = student.getFullName().length();
+            }
+        }
+        return maxFN;
+    }
+
+    @Override
+    public void buttonClickID() {    }
+
 }

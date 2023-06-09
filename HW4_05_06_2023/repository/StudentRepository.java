@@ -44,15 +44,5 @@ public class StudentRepository implements UserRepository<Student> {
         }
         return maxId;
     }
-    @Override
-    public int getMaxFullName() {             // !! Для красоты вывода в консоли
-        int maxFN = 0;
-        for (Student student : students) {
-            if (student.getFullName().length() > maxFN) {
-                maxFN = student.getFullName().length();
-            }
-        }
-        return maxFN;
-    }
 
 }

@@ -12,5 +12,7 @@ public interface UserService<T extends User> {
     List<T> getAllSortUsersByFamilyName();
     List<T> getAllSortUsersByAge();
     void removeUser(String fullName);
+    int getMaxFullName();
+    void buttonClickID();
 
 }

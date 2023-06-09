@@ -32,13 +32,24 @@ public class TeacherView implements UserView<Teacher> {
         System.out.println("====================================");
     }
 
+
     @Override
     public void create(String fullName, Integer age, String phoneNumber) {
         controller.create(fullName, age, phoneNumber);
     }
 
     @Override
+    public int getMaxFullName() {
+        return controller.getMaxFullName();
+    }
+
+    @Override
     public void removeUser(String fullName) {
         controller.removeUser(fullName);
     }
+
+    public void buttonClickID() {
+        controller.buttonClickID();
+    }
+
 }

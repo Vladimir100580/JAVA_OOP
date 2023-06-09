@@ -9,5 +9,4 @@ public interface UserRepository<T extends User> {
     void add(T t);
     void remove(String name);
     Long getMaxId();
-    int getMaxFullName();
 }

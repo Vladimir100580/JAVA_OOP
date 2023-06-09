@@ -44,4 +44,14 @@ public class StudentController implements UserController<Student> {
     public List<Student> getAllSortUsersByAge() {
         return studentService.getAllSortUsersByAge();
     }
+
+    @Override
+    public int getMaxFullName() {
+        return studentService.getMaxFullName();
+    }
+
+    @Override
+    public void buttonClickID() {
+
+    }
 }

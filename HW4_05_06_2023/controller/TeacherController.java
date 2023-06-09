@@ -40,8 +40,21 @@ public class TeacherController implements UserController<Teacher> {
         return teacherService.getAll();
     }
 
+
+    public int getMaxFullName() {
+        return teacherService.getMaxFullName();
+    }
+
     @Override
     public List<Teacher> getAllSortUsersByAge() {
         return teacherService.getAllSortUsersByAge();
     }
+
+    public void buttonClickID() {
+        teacherService.buttonClickID();
+    }
+
 }
+
+
+

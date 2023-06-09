@@ -11,5 +11,6 @@ public interface UserController<T extends User> {
     boolean removeUser(String fullName);
     List<T> getAll();
     List<T> getAllSortUsersByAge();
-
+    int getMaxFullName();
+    void buttonClickID();
 }
