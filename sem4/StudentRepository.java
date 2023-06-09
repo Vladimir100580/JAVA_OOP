@@ -1,4 +1,4 @@
-package HW3_01_06_2023;
+package sem4;
 
 import lombok.Getter;
 
