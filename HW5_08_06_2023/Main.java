@@ -1,18 +1,17 @@
-package HW4_05_06_2023;
+package HW5_08_06_2023;
 
 
-import HW4_05_06_2023.controller.StudentController;
-import HW4_05_06_2023.controller.TeacherController;
-import HW4_05_06_2023.model.StudyGroup;
-import HW4_05_06_2023.model.Teacher;
-import HW4_05_06_2023.repository.StudentRepository;
-import HW4_05_06_2023.repository.TeacherRepository;
-import HW4_05_06_2023.service.StudentService;
-import HW4_05_06_2023.service.StudyGroupService;
-import HW4_05_06_2023.service.TeacherService;
-import HW4_05_06_2023.view.SortType;
-import HW4_05_06_2023.view.StudentView;
-import HW4_05_06_2023.view.TeacherView;
+import HW5_08_06_2023.controller.StudentController;
+import HW5_08_06_2023.controller.TeacherController;
+import HW5_08_06_2023.model.StudyGroup;
+import HW5_08_06_2023.repository.StudentRepository;
+import HW5_08_06_2023.repository.TeacherRepository;
+import HW5_08_06_2023.service.StudentService;
+import HW5_08_06_2023.service.StudyGroupService;
+import HW5_08_06_2023.service.TeacherService;
+import HW5_08_06_2023.view.SortType;
+import HW5_08_06_2023.view.StudentView;
+import HW5_08_06_2023.view.TeacherView;
 
 import java.util.ArrayList;
 import java.util.List;

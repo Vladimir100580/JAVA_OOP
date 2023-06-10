@@ -1,7 +1,7 @@
-package HW4_05_06_2023.view;
+package HW5_08_06_2023.view;
 
-import HW4_05_06_2023.controller.UserController;
-import HW4_05_06_2023.model.Student;
+import HW5_08_06_2023.controller.UserController;
+import HW5_08_06_2023.model.Student;
 
 import java.util.List;
 

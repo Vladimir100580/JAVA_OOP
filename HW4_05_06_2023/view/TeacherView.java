@@ -3,6 +3,7 @@ package HW4_05_06_2023.view;
 import HW4_05_06_2023.controller.UserController;
 import HW4_05_06_2023.model.Teacher;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class TeacherView implements UserView<Teacher> {
@@ -46,6 +47,12 @@ public class TeacherView implements UserView<Teacher> {
     @Override
     public void removeUser(String fullName) {
         controller.removeUser(fullName);
+    }
+
+    Scanner in = new Scanner(System.in);       // На будущее
+    public String getValue(String title) {
+        System.out.printf("%s", title);
+        return in.nextLine();
     }
 
     public void buttonClickID() {

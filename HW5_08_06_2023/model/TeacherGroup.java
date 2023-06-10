@@ -1,6 +1,6 @@
-package HW4_05_06_2023.model;
+package HW5_08_06_2023.model;
 
-import HW4_05_06_2023.service.TeacherGroupIterator;
+import HW5_08_06_2023.service.TeacherGroupIterator;
 import lombok.Getter;
 import lombok.ToString;
 
