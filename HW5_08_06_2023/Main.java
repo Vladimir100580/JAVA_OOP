@@ -28,7 +28,6 @@ public class Main {
         System.out.println("\n---- Учащиеся ----\n");
         view.sendOnConsole(SortType.NONE);
 
-
         System.out.println("\n---- Преподаватели ----\n");
 
         TeacherView view1 = getTeacherView();
@@ -39,7 +38,6 @@ public class Main {
         view1.create("Андрей Геннадьевич Чапилев", 62, "+79222345427", "4ИнфоТех");
 
         view1.sendOnConsole(SortType.NONE);
-
         StudyGroupView studyGroupView = new StudyGroupView();
 
         view1.viewTeacher(view1.getById(4));   // определение студента и преподавателя по ID (и вывод через вьюшку)
@@ -53,7 +51,6 @@ public class Main {
         StudyGroupService studService = new StudyGroupService(view1.getAll(), view.getAll());
         view1.viewGroupTeachers(studService.createTeacherGroup(nameGr));
         view.viewGroupStudents(studService.createStudentGroup(nameGr));
-
     }
 
 
