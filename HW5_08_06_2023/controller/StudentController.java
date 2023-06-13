@@ -15,8 +15,8 @@ public class StudentController implements UserController<Student> {
     }
 
     @Override
-    public void create(String fullName, Integer age, String phoneNumber) {
-        studentService.create(fullName, age, phoneNumber);
+    public void create(String fullName, Integer age, String phoneNumber, String nameGroup) {
+        studentService.create(fullName, age, phoneNumber, nameGroup);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class StudentController implements UserController<Student> {
     }
 
     @Override
-    public void buttonClickID() {
+    public void buttonClickID() {    }
 
-    }
+    public Student getById(int hum) { return studentService.getById(hum);}
 }

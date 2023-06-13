@@ -12,24 +12,24 @@ public class TeacherService implements UserService<Teacher> {
 
     private final UserRepository<Teacher> teacherRepository;
 
-
     public TeacherService(TeacherRepository teacherRepository) {
         this.teacherRepository = teacherRepository;
     }
 
     @Override
-    public void create(String fullName, Integer age, String phoneNumber) {
+    public void create(String fullName, Integer age, String phoneNumber, String nameGroup) {
         Long id = teacherRepository.getMaxId() + 1;
-        Teacher teacher = new Teacher(id, fullName, age, phoneNumber);
+        Teacher teacher = new Teacher(id, fullName, age, phoneNumber, nameGroup);
         teacherRepository.add(teacher);
     }
 
 
-    public void buttonClickID(){
+    public void buttonClickID(){                //Относилось к 4-му ДЗ. По классам еще не разложено
         Scanner in = new Scanner(System.in);
         System.out.print("Введите ID учителя для корректировки: ");
         List<Teacher> teachers = teacherRepository.getAll();
         String id = in.nextLine();
+        if (!id.chars().allMatch(Character::isDigit) || id.equals("")) {id = "0";}
         for (Teacher teacher : teachers) {
             if (teacher.getId()==Long.parseLong(id, 10)) {
                 System.out.println(teacher);
@@ -96,5 +96,17 @@ public class TeacherService implements UserService<Teacher> {
         }
         return maxFN;
     }
+
+    public Teacher getById(int hum) {
+        List<Teacher> teachers = teacherRepository.getAll();
+        Teacher t = null;
+        for (Teacher teacher : teachers) {
+            if (teacher.getId() == hum) {
+                t = teacher;
+            }
+        }
+        return t;
+    }
+
 }
 

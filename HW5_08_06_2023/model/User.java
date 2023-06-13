@@ -10,5 +10,5 @@ public class User {
     private String fullName;
     private Integer age;
     private String phoneNumber;
-
+    private String nameGroup;
 }

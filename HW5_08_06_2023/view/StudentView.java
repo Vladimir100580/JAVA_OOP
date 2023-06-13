@@ -2,6 +2,7 @@ package HW5_08_06_2023.view;
 
 import HW5_08_06_2023.controller.UserController;
 import HW5_08_06_2023.model.Student;
+import HW5_08_06_2023.model.Teacher;
 
 import java.util.List;
 
@@ -33,8 +34,8 @@ public class StudentView implements UserView<Student> {
     }
 
     @Override
-    public void create(String fullName, Integer age, String phoneNumber) {
-        controller.create(fullName, age, phoneNumber);
+    public void create(String fullName, Integer age, String phoneNumber, String nameGroup) {
+        controller.create(fullName, age, phoneNumber, nameGroup);
     }
 
 
@@ -48,8 +49,32 @@ public class StudentView implements UserView<Student> {
         return controller.getMaxFullName();
     }
 
-    @Override
-    public void buttonClickID() {
-
+    public List<Student> getAll() {
+        return controller.getAll();
     }
+
+    public void viewStudent(Student student) {
+        if (student == null) {System.out.println("Такого студента нет");}
+        else {System.out.println(student);}
+    }
+
+    public void viewGroupStudents(List<Student> students) {
+        if (students.size() == 0) {
+            System.out.println("Студенты в указанной группе отсутствуют");
+        }
+        else {
+            String tx = "";
+            if (students.size() == 1) {tx = "Студент";}
+            else {tx = "Студенты";}
+            System.out.println("======= " + tx + " группы ========");
+            for (Student student : students) {
+                System.out.println(student);
+            }
+        }
+    }
+
+
+    @Override
+    public void buttonClickID() {    }
+    public Student getById(int hum) { return controller.getById(hum);}
 }
