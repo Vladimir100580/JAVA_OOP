@@ -2,6 +2,8 @@ package HW5_08_06_2023;
 
 import HW5_08_06_2023.controller.StudentController;
 import HW5_08_06_2023.controller.TeacherController;
+import HW5_08_06_2023.model.Student;
+import HW5_08_06_2023.model.StudyGroup;
 import HW5_08_06_2023.repository.StudentRepository;
 import HW5_08_06_2023.repository.TeacherRepository;
 import HW5_08_06_2023.service.StudentService;
@@ -11,6 +13,9 @@ import HW5_08_06_2023.view.SortType;
 import HW5_08_06_2023.view.StudentView;
 import HW5_08_06_2023.view.StudyGroupView;
 import HW5_08_06_2023.view.TeacherView;
+
+import java.awt.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,7 +31,14 @@ public class Main {
         view.create("Георгий Шнайдер", 21, "+79324352756", "4ИнфоТех");
 
         System.out.println("\n---- Учащиеся ----\n");
+        System.out.println("---- Без сортировки ----");
         view.sendOnConsole(SortType.NONE);
+//        System.out.println("---- сортировка по имени ----");
+//        view.sendOnConsole(SortType.NAME);
+//        System.out.println("---- сортировка по фамилии ----");
+//        view.sendOnConsole(SortType.FAMILY);
+//        System.out.println("---- сортировка по возрасту ----");
+//        view.sendOnConsole(SortType.AGE);
 
         System.out.println("\n---- Преподаватели ----\n");
 
@@ -37,7 +49,34 @@ public class Main {
         view1.create("Виктория Дмитриевна Лаушкина", 33, "+79164563421", "1Био");
         view1.create("Андрей Геннадьевич Чапилев", 62, "+79222345427", "4ИнфоТех");
 
+        int a = view.getMaxFullName();
+
+        System.out.println("---- Без сортировки ----");
         view1.sendOnConsole(SortType.NONE);
+//        System.out.println("---- сортировка по имени ----");
+//        view1.sendOnConsole(SortType.NAME);
+//        System.out.println("---- сортировка по фамилии ----");
+//        view1.sendOnConsole(SortType.FAMILY);
+//        System.out.println("---- сортировка по возрасту ----");
+//        view1.sendOnConsole(SortType.AGE);
+//        view1.buttonClickID();
+//        view1.sendOnConsole(SortType.NONE);
+
+
+        // В UserComparator добавлена 13 строка, указывающая на последнее слово в fullName,
+        // по которому происходит сортировка, т.е. на фамилию, в обоих случаях.
+
+//        List<Integer> ll = new ArrayList<>();
+//        ll.add(65);
+//        ll.add(2);
+//        System.out.println(ll);
+//        StudyGroup df = new StudyGroup(3, ll);
+//        StudyGroupService obj = new StudyGroupService(5, ll);
+//        obj.createStudyGroup(df);
+//        StudyGroupView io1 = new StudyGroupView();
+//        String er = io1.getValue("Ввод: ");
+//        System.out.printf("%s", er);
+
         StudyGroupView studyGroupView = new StudyGroupView();
 
         view1.viewTeacher(view1.getById(4));   // определение студента и преподавателя по ID (и вывод через вьюшку)
@@ -51,7 +90,12 @@ public class Main {
         StudyGroupService studService = new StudyGroupService(view1.getAll(), view.getAll());
         view1.viewGroupTeachers(studService.createTeacherGroup(nameGr));
         view.viewGroupStudents(studService.createStudentGroup(nameGr));
+
+        //StudyGroup jk = new StudyGroup(view1.getById(4), view.getAll());
+        //System.out.println(etr.getStudentsGroup());
+
     }
+
 
 
     private static StudentView getStudentView() {
@@ -69,3 +113,4 @@ public class Main {
     }
 
 }
+
